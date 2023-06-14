@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #clockContainer {
+        position: relative;
+        margin: auto;
+        height: 40vw;
+        width: 40vw;
+        background: url(https://icon2.cleanpng.com/20180217/rdw/kisspng-social-media-marketing-time-management-clock-clock-without-hands-5a87ba8f3374d3.4807223315188445592108.jpg)
+          no-repeat;
+        background-size: 100%;
+      }
+
+      #hours,
+      #minutes,
+      #seconds {
+        position: absolute;
+        background: black;
+        border-radius: 10px;
+        transform-origin: bottom;
+      }
+
+      #hours {
+        width: 2%;
+        height: 25%;
+        top: 25%;
+        left: 49%;
+      }
+
+      #minutes {
+        width: 1.5%;
+        height: 30%;
+        top: 20%;
+        left: 49.5%;
+        transform-origin: bottom;
+      }
+
+      #seconds {
+        width: 1%;
+        height: 35%;
+        left: 49.5%;
+        top: 14%;
+        transform-origin: bottom;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clockContainer">
+      <div id="hours"></div>
+      <div id="minutes"></div>
+      <div id="seconds"></div>
+    </div>
+    <script>
+      setInterval(() => {
+        d = new Date();
+        htime = d.getHours();
+        mtime = d.getMinutes();
+        stime = d.getSeconds();
+        hrotation = 30 * htime + mtime / 2;
+        mrotation = 6 * mtime;
+        srotation = 6 * stime;
+
+        hours.style.transform = `rotate(${hrotation}deg)`;
+        minutes.style.transform = `rotate(${mrotation}deg)`;
+        seconds.style.transform = `rotate(${srotation}deg)`;
+      }, 1000);
+    </script>
+  </body>
+</html>
